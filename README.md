@@ -39,6 +39,7 @@ python manage.py migrate
 
 # Inicie o servidor
 python manage.py runserver
+```
 
 ## 👤 Autora
 
