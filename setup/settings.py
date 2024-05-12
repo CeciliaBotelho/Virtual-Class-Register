@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,10 +128,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Backend do MySQL
-        'NAME': 'alura',                       # Nome do banco de dados
-        'USER': 'root',                   # Usuário do MySQL
-        'PASSWORD': '27082001',                # Senha do usuário
-        'HOST': 'localhost',                   # Endereço do servidor MySQL
-        'PORT': '3306',                        # Porta do servidor MySQL
+        'NAME': config('DB_NAME'),             # Nome do banco de dados
+        'USER': config('DB_USER'),             # Usuário do MySQL
+        'PASSWORD': config('DB_PASSWORD'),     # Senha do usuário
+        'HOST': config('DB_HOST'),             # Endereço do servidor MySQL
+        'PORT': config('DB_PORT'),             # Porta do servidor MySQL
     }
 }
